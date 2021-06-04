@@ -1,0 +1,28 @@
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+    <title>Live prices</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="base.css">
+  </head>
+  <body>
+    <div id="app" class="flex flex-column" >
+      <div class="container">
+      <div class="row" style="margin-top: 10px;">
+        <input type="text" id="tokens" placeholder="tokens, comma separated" value="BTC" oninput="let p=this.selectionStart;this.value=this.value.toUpperCase();this.setSelectionRange(p, p);"  >
+        <input type="text" id="fiats" placeholder="fiats, comma separated" value="USD" oninput="let p=this.selectionStart;this.value=this.value.toUpperCase();this.setSelectionRange(p, p);" >
+        <button type="submit" id="submit-pairs">Submit pairs</button>
+      </div>
+      <div class="row">
+        <pre id="message">
+        </pre>
+      </div>
+      </div>
+    </div>
+    <script src="//unpkg.com/@feathersjs/client@^4.3.0/dist/feathers.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+  </body>
+</html>
